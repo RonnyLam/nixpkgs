@@ -268,7 +268,7 @@ let
 
   createSSLOptsStr = o: ''
     ssl = {
-      cafile = "/etc/ssl/certs/ca-bundle.crt";
+      cafile = "/etc/ssl/certs/ca-certificates.crt";
       key = "${o.key}";
       certificate = "${o.cert}";
       ${concatStringsSep "\n" (mapAttrsToList (name: value: "${name} = ${toLua value};") o.extraOptions)}
